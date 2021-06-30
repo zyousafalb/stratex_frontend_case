@@ -108,6 +108,9 @@ export class UserComponent implements OnInit, OnDestroy {
   
     if (index != -1) {
       objType.splice(index, 1);
+      index = this.users.findIndex(x => x.id == id && x.role == type);
+
+      this.users.splice(index, 1);
     }
   }
   
