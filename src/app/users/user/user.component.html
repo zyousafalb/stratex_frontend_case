@@ -1,0 +1,77 @@
+ <!-- navbar area, for filter input-->
+ <nav class="navbar sticky-top navbar-light bg-light">
+    <div class="container-fluid w-50">
+        <label for="search-user" class="col-sm-2 col-form-label">Search for employee:</label>
+        <div class="col-sm-10">
+            <input type="text" (keyup)="searching($event)" class="form-control" id="search-user" placeholder="Enter a name">
+        </div>
+    </div>
+</nav>
+<!-- /end of navbar area-->
+<!-- part for displaying user content-->
+<div class="container pt-5">
+    <div class="contant-area">
+        <h2>Users</h2>
+        <app-details [details]="userRole" (deleteUser)="removeUser($event)"></app-details>
+        <h2>Senior Users</h2>
+        <app-details [details]="seniorUser" (deleteUser)="removeUser($event)"></app-details>
+        <h2>WFM</h2>
+        <app-details [details]="wfm" (deleteUser)="removeUser($event)"></app-details>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="reserForm();openModal('custom-modal-1')">
+        Add User
+    </button>
+</div>
+<!-- /end of displaying content-->
+
+
+
+
+
+
+<user-modal id="custom-modal-1" >
+    <form name="userForm" #userForm="ngForm" (ngSubmit)="closeModal(userForm, 'custom-modal-1')">
+
+        <div class="mb-3">
+            <label for="first-name-input">First Name</label>
+            <input type="text" required class="form-control" id="first-name-input" [(ngModel)]="user.firstName" name="firstName"   #firstName="ngModel" placeholder="Mark">
+
+            <div [hidden]="firstName.valid || firstName.pristine"
+                class="alert alert-danger">
+                First name is required
+            </div>
+
+        </div>
+        <div class="mb-3">
+            <label for="last-name-input">Last Name</label>
+            <input type="text" required class="form-control" id="last-name-input" [(ngModel)]="user.lastName" name="lastName"   #lastName="ngModel" placeholder="Otto">
+
+            <div [hidden]="lastName.valid || lastName.pristine"
+                class="alert alert-danger">
+                Last name is required
+            </div>
+
+        </div>
+        <div class="mb-3">
+            <label for="role-select">Role</label>
+            <select class="form-select" id="role-select" aria-label="Role select" required  [(ngModel)]="user.role" name="role"   #role="ngModel">
+                <option value="0" disabled>Select a role</option>
+                <option value="1">User</option>
+                <option value="2">Senior User</option>
+                <option value="3">WFM</option>
+            </select>
+
+            <div [hidden]="role.valid || role.pristine"
+                class="alert alert-danger">
+                Select role
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)=" userForm.reset();userServices.close('custom-modal-1')">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+    </form>
+
+  
+</user-modal>

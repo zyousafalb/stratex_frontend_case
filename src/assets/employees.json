@@ -1,0 +1,40 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "role": 1,
+            "firstName": "Mark",
+            "lastName": "Otto"
+        },
+        {
+            "id": 2,
+            "role": 1,
+            "firstName": "Jacob",
+            "lastName": "Thornton"
+        },
+        {
+            "id": 1,
+            "role": 2,
+            "firstName": "Brad",
+            "lastName": "Pitt"
+        },
+        {
+            "id": 2,
+            "role": 2,
+            "firstName": "Tom",
+            "lastName": "Hanks"
+        },
+        {
+            "id": 1,
+            "role": 3,
+            "firstName": "Raymond",
+            "lastName": "Rienks"
+        },
+        {
+            "id": 2,
+            "role": 3,
+            "firstName": "Martin",
+            "lastName": "Koole"
+        }
+    ]
+}
