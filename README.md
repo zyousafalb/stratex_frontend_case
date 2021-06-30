@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+Questions:
+-	How long did you spend on this assignment? What would you have done different if you had more time?
+-	What are focus areas if your code would have to be part of an actual application? 
+
+
+Answers: 
+1- I spend 2hours in it, in case I have some more time I will improve 
+    1.1 modal-pop design 
+    1.2 http call error handler
+2- http serveice and user module are the main area.      
